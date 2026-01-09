@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* The "Cost of Chaos" Palette */
+  --chaos-teal: #124544;
+  --chaos-navy: #111d26;
+  --chaos-burgundy: #3a1012;
+  --chaos-sand: #dbd0c2;
+  --chaos-cream: #fbf3da;
+  --chaos-gold: #bd9468;
+
+  /* Default Next.js Variables */
+  --background: var(--chaos-cream);
+  --foreground: var(--chaos-navy);
 }
 
 @theme inline {
+  /* Map the custom colors so you can use classes like bg-chaos-teal or text-chaos-gold */
+  --color-chaos-teal: var(--chaos-teal);
+  --color-chaos-navy: var(--chaos-navy);
+  --color-chaos-burgundy: var(--chaos-burgundy);
+  --color-chaos-sand: var(--chaos-sand);
+  --color-chaos-cream: var(--chaos-cream);
+  --color-chaos-gold: var(--chaos-gold);
+
+  /* Standard Tailwind Overrides */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Font Setup */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular;
 }
 
+/* Dark Mode - Keeping it soft, not pure black, to stay "premium" */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #111d26; /* Using her Navy for dark mode bg */
+    --foreground: #fbf3da; /* Using her Cream for dark mode text */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Global Styles */
+@layer base {
+  body {
+    @apply bg-chaos-cream text-chaos-navy antialiased;
+    /* This ensures every page starts with her brand colors */
+  }
 }
