@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* PROFESSIONAL DISCLAIMER (Crucial for PhD Candidates) */}
+        {/* PROFESSIONAL DISCLAIMER */}
         <div className="border-t border-white/10 pt-12 pb-8">
           <p className="text-[11px] text-white/40 leading-relaxed max-w-5xl">
             <span className="text-white/60 font-medium">Professional Notice:</span> Cost of Chaos is a women-focused support practice led by Lynne, PhD Candidate in Clinical Psychology. All services are supportive and provided under professional supervision. These services do not replace emergency, psychiatric, or medical care. If you are in a crisis, please contact your local emergency services immediately.
@@ -63,8 +63,9 @@ export default function Footer() {
             © {currentYear} Cost of Chaos. All Rights Reserved.
           </p>
           <div className="flex gap-8 text-[10px] text-white/30 uppercase tracking-widest font-bold">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            {/* These point to the new Disclaimer page you created */}
+            <Link href="/disclaimer" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/disclaimer" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
